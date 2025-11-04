@@ -35,4 +35,4 @@ replacing the general requirments.txt with the specific file for that dataset.
 
 ## Description
 
-In this project we have each built a classification model for the stroke dataset.
+In this project we have each built a classification model for the stroke dataset. Our goal is to find the most powerful model in predicting cases of stroke. We have chosen to use the AUC-PR performance metric due to the imbalance in our data. We will each build our model independently then compare the output performance metrics on the test dataset. In our wrapup we will consider these results in the context of the dataset.
