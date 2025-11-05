@@ -1,5 +1,5 @@
 ## Comparison of results
-All values stated are given to 4 s.f.
+Below we will give the final test scores and error rates of the 4 models. All values stated are given to 4 s.f.
 
 
 ### XGBoost model
