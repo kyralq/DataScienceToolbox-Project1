@@ -1,24 +1,14 @@
 ## Comparison of results
-All values stated are given to 4 s.f.
+Below we will give the final test scores and error rates of the 4 models. All values stated are given to 4 s.f.
 
+### Logistic Regression model 
 
-### XGBoost model
+* Final test AUC-PR score: 0.07743987
+* Type 1 error rate: 0.1440329
+* Type 2 error rate: 0.4
 
-* Final test AUC-PR score: 0.1572
-* Type I error rate: 0.1914
-* Type II error rate: 0.3800
-
-Model strengths: low type I error rate suggests the model makes relatively few false positives, which is particuarly good given the imbalance of the data, with few positive cases to train on.
-Model weakness: significant overfitting to the training data - my best model output an AUC_PR score of 0.2575 during training which is significantly higher than the score on the test data indicating overfitting.
-
-### SVM model
-
-* Final test AUC-PR score: 0.06291
-* Type I error rate: 0.0
-* Type II error rate: 0.04728
-
-Model strengths: Applicable and computationally inexpensive for size of dataset and number of features.
-Model weakness: Sensitive to noisy / irrelevant feature variables in the dataset. Ended up guessing 'no stroke' for all samples in testing set.
+Model strengths: Easily interpretable, meaning outputs can be contexualised, and fast to train. Good baseline model to understand data before looking at more complex models.
+Model weaknesses: Performs poorly on imbalanced data, resulting in high Type 2 error (0.4) relates to 40% of strokes missed in diagnosis. I've overfitted the model, recieving AUC-PR of 0.2357508 during CV.
 
 ### Random Forest model
 
@@ -29,13 +19,23 @@ Model weakness: Sensitive to noisy / irrelevant feature variables in the dataset
 Model strengths: Highest AUC-PR score thanks to hyperparameter tuning and minimal overfitting since robust to noise.
 Model weakness: High type II error indicating that the model is too conservative when predicting positive cases. Also, computationally expensive with some parameter selection taking almost 2 minutes to run despite the dataset being quite small, which suggests it’s not scalable.
 
-### Logistic Regression model 
+### XGBoost model
 
-* Final test AUC-PR score: 0.07743987
-* Type 1 error rate: 0.1440329
-* Type 2 error rate: 0.4
-Model strengths: Easily interpretable, meaning outputs can be contexualised, and fast to train. Good baseline model to understand data before looking at more complex models.
-Model weaknesses: Performs poorly on imbalanced data, resulting in high Type 2 error (0.4) relates to 40% of strokes missed in diagnosis. I've overfitted the model, recieving AUC-PR of 0.2357508 during CV. 
+* Final test AUC-PR score: 0.1572
+* Type I error rate: 0.1914
+* Type II error rate: 0.3800
+
+Model strengths: low type I error rate suggests the model makes relatively few false positives, which is particuarly good given the imbalance of the data, with few positive cases to train on.
+Model weakness: significant overfitting to the training data - the best model output an AUC_PR score of 0.2575 during training which is significantly higher than the score on the test data indicating overfitting.
+
+### SVM model
+
+* Final test AUC-PR score: 0.06291
+* Type I error rate: 0.0
+* Type II error rate: 0.04728
+
+Model strengths: Applicable and computationally inexpensive for size of dataset and number of features.
+Model weakness: Sensitive to noisy / irrelevant feature variables in the dataset. Ended up guessing 'no stroke' for all samples in testing set.
 
 
 ## Final ranking of the models
@@ -44,9 +44,6 @@ Model weaknesses: Performs poorly on imbalanced data, resulting in high Type 2 e
 2. XGBoost
 3. Logistic Regression
 4. SVM
-
-## Final ranking of the models
-
 
 ## Further comparsion of the models and application to real world
 If this model were to be used as a screening method in the real world then the false negative rate would be more important than the false positive rate. This is because a high false negative rate could directly cause loss of life, if fatal cases of stroke are missed. Whereas a high false negative rate might cause some unnecessary further examination of patients but this is a much safer option than missing true cases of stroke. Hence if our models were to be used in a real life scenario, it might not be that the winning model is actually most appropriate.
