@@ -31,11 +31,11 @@ Model weakness: High type II error indicating that the model is too conservative
 
 ### Logistic Regression model 
 
-* Final test AUC-PR score: 0.2357508
+* Final test AUC-PR score: 0.07743987
 * Type 1 error rate: 0.1440329
 * Type 2 error rate: 0.4
-Model strengths: Easily interpretable, meaning outputs can be contexualised, and fast to train. Not prone to overfitting.
-Model weaknesses: Performs poorly on imbalanced data, resulting in high Type 2 error (0.4) relates to 40% of strokes missed in diagnosis. 
+Model strengths: Easily interpretable, meaning outputs can be contexualised, and fast to train. Good baseline model to understand data before looking at more complex models.
+Model weaknesses: Performs poorly on imbalanced data, resulting in high Type 2 error (0.4) relates to 40% of strokes missed in diagnosis. I've overfitted the model, recieving AUC-PR of 0.2357508 during CV. 
 
 
 ## Final ranking of the models
