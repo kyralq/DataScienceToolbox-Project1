@@ -1,6 +1,23 @@
 ## Comparison of results
 Below we will give the final test scores and error rates of the 4 models. All values stated are given to 4 s.f.
 
+### Logistic Regression model 
+
+* Final test AUC-PR score: 0.07743987
+* Type 1 error rate: 0.1440329
+* Type 2 error rate: 0.4
+
+Model strengths: Easily interpretable, meaning outputs can be contexualised, and fast to train. Good baseline model to understand data before looking at more complex models.
+Model weaknesses: Performs poorly on imbalanced data, resulting in high Type 2 error (0.4) relates to 40% of strokes missed in diagnosis. I've overfitted the model, recieving AUC-PR of 0.2357508 during CV.
+
+### Random Forest model
+
+* Final test AUC-PR score: 0.2386
+* Type I error rate: 0.1002
+* Type II error rate: 0.5263
+
+Model strengths: Highest AUC-PR score thanks to hyperparameter tuning and minimal overfitting since robust to noise.
+Model weakness: High type II error indicating that the model is too conservative when predicting positive cases. Also, computationally expensive with some parameter selection taking almost 2 minutes to run despite the dataset being quite small, which suggests it’s not scalable.
 
 ### XGBoost model
 
@@ -20,23 +37,6 @@ Model weakness: significant overfitting to the training data - my best model out
 Model strengths: Applicable and computationally inexpensive for size of dataset and number of features.
 Model weakness: Sensitive to noisy / irrelevant feature variables in the dataset. Ended up guessing 'no stroke' for all samples in testing set.
 
-### Random Forest model
-
-* Final test AUC-PR score: 0.2386
-* Type I error rate: 0.1002
-* Type II error rate: 0.5263
-
-Model strengths: Highest AUC-PR score thanks to hyperparameter tuning and minimal overfitting since robust to noise.
-Model weakness: High type II error indicating that the model is too conservative when predicting positive cases. Also, computationally expensive with some parameter selection taking almost 2 minutes to run despite the dataset being quite small, which suggests it’s not scalable.
-
-### Logistic Regression model 
-
-* Final test AUC-PR score: 0.07743987
-* Type 1 error rate: 0.1440329
-* Type 2 error rate: 0.4
-Model strengths: Easily interpretable, meaning outputs can be contexualised, and fast to train. Good baseline model to understand data before looking at more complex models.
-Model weaknesses: Performs poorly on imbalanced data, resulting in high Type 2 error (0.4) relates to 40% of strokes missed in diagnosis. I've overfitted the model, recieving AUC-PR of 0.2357508 during CV. 
-
 
 ## Final ranking of the models
 
@@ -44,9 +44,6 @@ Model weaknesses: Performs poorly on imbalanced data, resulting in high Type 2 e
 2. XGBoost
 3. Logistic Regression
 4. SVM
-
-## Final ranking of the models
-
 
 ## Further comparsion of the models and application to real world
 If this model were to be used as a screening method in the real world then the false negative rate would be more important than the false positive rate. This is because a high false negative rate could directly cause loss of life, if fatal cases of stroke are missed. Whereas a high false negative rate might cause some unnecessary further examination of patients but this is a much safer option than missing true cases of stroke. Hence if our models were to be used in a real life scenario, it might not be that the winning model is actually most appropriate.
