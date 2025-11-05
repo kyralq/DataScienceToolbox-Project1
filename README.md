@@ -12,7 +12,7 @@ All report content is in the directory Report/
 
 The reading order of the content is:
 * 01-Data.ipynb
-* 02-LogisticRegression-Model.R
+* 02-LogisticRegression-Model.Rmd
 * 03-RandomForest-model.ipynb
 * 04-XGboost-model.ipynb
 * 05-SVM-model.ipynb
@@ -20,7 +20,7 @@ The reading order of the content is:
 
 ## Requirements
 
-Requirements for the R files are given within each script.
+Requirements for the Rmd files are given within each script.
 
 Requirements for each python file is given in individual requirements.txt files:
 * `XGBoost-requirments.txt`
