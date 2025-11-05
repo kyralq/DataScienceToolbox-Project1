@@ -26,13 +26,13 @@ Model weakness: Sensitive to noisy / irrelevant feature variables in the dataset
 * Type I error rate: 0.1002
 * Type II error rate: 0.5263
 
-Model strengths: Highest AUC-PR score thanks to hyperparameter tuning and minimal overfitting.
-Model weakness: High type II error indicating that the model is too conservative when predicting positive cases. Also, computationally expensive with some parameter selection taking over a minute to run despite the dataset being quite small, which suggests it’s not scalable.
+Model strengths: Highest AUC-PR score thanks to hyperparameter tuning and minimal overfitting since robust to noise.
+Model weakness: High type II error indicating that the model is too conservative when predicting positive cases. Also, computationally expensive with some parameter selection taking almost 2 minutes to run despite the dataset being quite small, which suggests it’s not scalable.
 
 
 ## Final ranking of the models
 
-1.
+1. Random Forest
 2.
 3.
 4. SVM
