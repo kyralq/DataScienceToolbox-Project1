@@ -1,3 +1,10 @@
+pkgs = c("tidyverse" , "tidymodels" , "rlang" , "corrplot" , 
+         "GGally" , "patchwork" , "recipes" , "themis" , "PRROC")
+
+for(p in pkgs) {
+  if (!require(p,character.only = TRUE)) install.packages(p)
+}
+
 library("tidyverse")
 library("tidymodels")
 library("rlang")
