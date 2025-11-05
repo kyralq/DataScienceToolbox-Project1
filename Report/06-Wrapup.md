@@ -26,7 +26,7 @@ Model weakness: High type II error indicating that the model is too conservative
 * Type II error rate: 0.3800
 
 Model strengths: low type I error rate suggests the model makes relatively few false positives, which is particuarly good given the imbalance of the data, with few positive cases to train on.
-Model weakness: significant overfitting to the training data - my best model output an AUC_PR score of 0.2575 during training which is significantly higher than the score on the test data indicating overfitting.
+Model weakness: significant overfitting to the training data - the best model output an AUC_PR score of 0.2575 during training which is significantly higher than the score on the test data indicating overfitting.
 
 ### SVM model
 
