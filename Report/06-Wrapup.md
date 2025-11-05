@@ -41,8 +41,8 @@ Model weaknesses: Performs poorly on imbalanced data, resulting in high Type 2 e
 ## Final ranking of the models
 
 1. Random Forest
-2.
-3.
+2. XGBoost
+3. Logistic Regression
 4. SVM
 
 ## Final ranking of the models
@@ -53,4 +53,4 @@ If this model were to be used as a screening method in the real world then the f
 
 Random Forest achieved the highest score for our performance metric - AUC-PR, which focuses on correctly identifying positive cases. This means the Random Forest model was the best at predicting true stroke cases while minimising false alarms. If the model was used as a key diagnosis tool, this attribute would be essential to avoid misdiagnosis. 
 
-If, however, the model was used as an initial screening tool, we would also want prioritise minimising false negatives (type II error). The SVM model has a low type II error rate but has a very low AUC-PR score and wouldn't be useful. On the other hand, the XGBoost model has a relatively low type II error rate while maintaining the second highest AUC-PR score. For this purpose, the XGBoost model would likely be the most useful.
+If, however, the model was used as an initial screening tool, we would also want prioritise minimising false negatives (type II error). The SVM model has a low type II error rate but has a very low AUC-PR score and wouldn't be useful. On the other hand, the XGBoost model has a relatively low type II error rate while maintaining the second highest AUC-PR score. For this purpose, the XGBoost model would likely be the most useful. Logistic regresssion has both a high type II error, and a low AUC-PR score, so isn't a dependable model in this context, with it's core use being to contextualise the effects of covariates in terms of odds-ratios. 
