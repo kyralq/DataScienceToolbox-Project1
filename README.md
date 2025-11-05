@@ -12,7 +12,7 @@ All report content is in the directory Report/
 
 The reading order of the content is:
 * 01-Data.ipynb
-* 02-LogisticRegression-model.R
+* 02-LogisticRegression-Model.R
 * 03-RandomForest-model.ipynb
 * 04-XGboost-model.ipynb
 * 05-SVM-model.ipynb
